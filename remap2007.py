@@ -53,15 +53,16 @@ for line in (xml).split("\n"):
     text = attrs.group(4).replace("&amp;", "&")
     #print "DEBUG %s %s %s %s" % (font, left, top, text)
 
+
     if left < 150:
+        results.append(record)
+        record = ["", "", "", "", "", "","", "", "","", "", "", ""]
         record[0] += text + '\r'
     elif left < 280:
         record[1] += text + '\r'
     elif left < 340:
         record[2] += text + '\r'
     elif left < 380:
-        results.append(record)
-        record = ["", "", "", "", "", "","", "", "","", "", "", ""]
         record[3] += text + '\r'
     elif left < 440:
         record[4] += text + '\r'
